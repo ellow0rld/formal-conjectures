@@ -49,13 +49,12 @@ remains a conjecture.
 -/
 
 @[category research open, AMS 11]
-theorem agrawal_conjecture (n r : ℕ) (hn : n > 1) (hr : r > 0) (h_coprime : n.gcd r = 1) :
-  let R := Polynomial (ZMod n)
-  let I : Ideal R := Ideal.span {X^r - 1}
-  answer(sorry) ↔
-    (Ideal.Quotient.mk I ((X - 1)^n) = Ideal.Quotient.mk I (X^n - 1) →
-    (n.Prime ∨ (n^2 : ZMod r) = 1)) :=
-by
+theorem agrawal_conjecture :
+  ∀ (n r : ℕ), n > 1 → r > 0 → n.gcd r = 1 →
+    let R := Polynomial (ZMod n)
+    let I : Ideal R := Ideal.span {X^r - 1}
+    Ideal.Quotient.mk I ((X - 1)^n) = Ideal.Quotient.mk I (X^n - 1) →
+    (n.Prime ∨ (n^2 : ZMod r) = 1) := by
   sorry
 
 end AgrawalConjecture
