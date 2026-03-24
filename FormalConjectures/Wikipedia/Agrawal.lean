@@ -45,7 +45,6 @@ $n$ is prime (with a specific exception for $n^2 \equiv 1 \pmod{r}$)?
 While the "if" direction is a known theorem, the "only if" direction
 remains a conjecture.
 -/
-
 @[category research open, AMS 11]
 theorem agrawal_conjecture :
   answer(sorry) ↔
@@ -68,7 +67,6 @@ This variant was proposed by Roman B. Popovych in 2018.
 - [Wikipedia](https://en.wikipedia.org/wiki/Agrawal%27s_conjecture#cite_note-6)
 - [Paper](https://eprint.iacr.org/2009/008.pdf)
 -/
-
 @[category research open, AMS 11]
 theorem agrawal_conjecture.variants.popovych :
   ∀ (n r : ℕ), n > 1 → r > 0 → n.gcd r = 1 →
