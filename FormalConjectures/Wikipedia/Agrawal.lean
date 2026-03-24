@@ -39,8 +39,8 @@ namespace AgrawalConjecture
 /--
 **Agrawal's Primality Conjecture.**
 
-If the congruence $(X-1)^n \equiv X^n - 1 \pmod{n, X^r-1}$ holds,
-then $n$ is either prime or $n^2 \equiv 1 \pmod{r}$.
+Does the congruence $(X-1)^n \equiv X^n - 1 \pmod{n, X^r-1}$ imply
+$n$ is prime (with a specific exception for $n^2 \equiv 1 \pmod{r}$)?
 
 While the "if" direction is a known theorem, the "only if" direction
 remains a conjecture.
@@ -48,12 +48,13 @@ remains a conjecture.
 
 @[category research open, AMS 11]
 theorem agrawal_conjecture :
-  ∀ (n r : ℕ), n > 1 → r > 0 → n.gcd r = 1 →
-    let R := Polynomial (ZMod n)
-    let X : R := Polynomial.X
-    let I : Ideal R := Ideal.span ({X^r - 1} : Set R)
-    Ideal.Quotient.mk I ((X - 1)^n) = Ideal.Quotient.mk I (X^n - 1) →
-    (n.Prime ∨ (n^2 : ZMod r) = 1) := by
+  answer(sorry) ↔
+    ∀ (n r : ℕ), n > 1 → r > 0 → n.gcd r = 1 →
+      let R := Polynomial (ZMod n)
+      let X : R := Polynomial.X
+      let I : Ideal R := Ideal.span ({X^r - 1} : Set R)
+      Ideal.Quotient.mk I ((X - 1)^n) = Ideal.Quotient.mk I (X^n - 1) →
+      (n.Prime ∨ (n^2 : ZMod r) = 1) := by
   sorry
 
 /--
